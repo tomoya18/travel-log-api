@@ -1,13 +1,13 @@
-openapi: 3.0.1
+openapi: 3.1.0
 info:
   title: Hama Travel Log API
   description: >
     このAPIは、ユーザーの過去の旅行ログ（travel_log.txt）から関連情報を検索します。
     旅行に関する質問（泊まったホテル、食べたもの、訪れた場所など）を受けたときに、
     このAPIを使って過去ログから検索してください。
-  version: '1.0'
+  version: "1.0"
 servers:
-  - url: http://localhost:8000
+  - url: https://example.com  # 仮の外部URLでOK！
 paths:
   /search:
     post:
