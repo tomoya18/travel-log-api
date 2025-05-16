@@ -1,0 +1,45 @@
+openapi: 3.0.1
+info:
+  title: Hama Travel Log API
+  description: >
+    このAPIは、ユーザーの過去の旅行ログ（travel_log.txt）から関連情報を検索します。
+    旅行に関する質問（泊まったホテル、食べたもの、訪れた場所など）を受けたときに、
+    このAPIを使って過去ログから検索してください。
+  version: '1.0'
+servers:
+  - url: http://localhost:8000
+paths:
+  /search:
+    post:
+      summary: 過去の旅ログから情報を検索します
+      operationId: searchTravelLog
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/QueryRequest'
+      responses:
+        '200':
+          description: 類似した旅ログの文を返します
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SearchResponse'
+components:
+  schemas:
+    QueryRequest:
+      type: object
+      properties:
+        query:
+          type: string
+          description: ユーザーの質問文（例：「2025年3月にスペインで泊まったホテルは？」）
+      required:
+        - query
+    SearchResponse:
+      type: object
+      properties:
+        results:
+          type: array
+          items:
+            type: string
