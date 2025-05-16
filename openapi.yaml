@@ -7,7 +7,7 @@ info:
     このAPIを使って過去ログから検索してください。
   version: "1.0"
 servers:
-  - url: https://example.com  # 仮の外部URLでOK！
+  - url: https://dummy.hamaapi.com  # 仮の外部URLでOK！
 paths:
   /search:
     post:
