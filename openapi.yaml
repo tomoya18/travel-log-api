@@ -39,7 +39,5 @@ components:
     SearchResponse:
       type: object
       properties:
-        results:
-          type: array
-          items:
-            type: string
+        answer:
+          type: string
