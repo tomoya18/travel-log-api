@@ -6,8 +6,7 @@ info:
     旅行に関する質問（泊まったホテル、食べたもの、訪れた場所など）を受けたときに、
     このAPIを使って過去ログから検索してください。
   version: "1.0"
-servers:
-  - url: https://dummy.hamaapi.com  # 仮の外部URLでOK！
+
 paths:
   /search:
     post:
